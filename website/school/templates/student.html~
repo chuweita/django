@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>添加</title>
+
+    <!-- Bootstrap -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+	<form method="get" action="/add_student">
+		<br />
+		<br />
+		<div  class="text-center">
+			<input type="hidden" name="pro_id" value="{{pro_id}}" />
+			<input type="hidden" name="sc_id" value="{{sc_id}}" />
+			<input type="text" name='student' required="required"/>
+			<button type="submit" class="btn btn-default">添加学生</button>
+		</div>
+	</form>
+	<form method="get" action="/add_student">
+		<div  class="text-center">
+			<input type="hidden" name="pro_id" value="{{pro_id}}" />
+			<input type="hidden" name="sc_id" value="{{sc_id}}" />
+			学生id<input type="text" name='student' required="required"/>
+			学生姓名<input type="text" name='student' required="required"/>
+			改为<input type="text" name='student' required="required"/>
+			<button type="submit" class="btn btn-default">查找学生</button>
+		</div>
+	</form>
+	<form method="get" action="/add_student">
+		<div  class="text-center">
+			<input type="hidden" name="pro_id" value="{{pro_id}}" />
+			<input type="hidden" name="sc_id" value="{{sc_id}}" />
+			学生id<input type="text" name='student' required="required"/>
+			学生姓名<input type="text" name='student' required="required"/>
+			<button type="submit" class="btn btn-default">修改学生</button>
+		</div>
+	</form>
+		<br />
+		
+		
+		{%for s in student%}
+			<div class="form-group">
+				<p class="text-center">
+					学生--------{{s.student_id}}--------{{s.student_name}}
+				</p>
+			</div>
+		{%endfor%}
+		<p class="text-center">
+		{%for i in a%}
+			<a href="student?sc_id={{sc_id}}&pro_id={{pro_id}}&page={{i}}">[{{i}}]</a>
+		{%endfor%}
+		<a href="/process?sc_id={{sc_id}}&page=1">返回</a>
+		</p>
+	
+   
+   
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="static/js/bootstrap.min.js"></script>
+  </body>
+</html>

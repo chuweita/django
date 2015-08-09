@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>添加</title>
+
+    <!-- Bootstrap -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+	<form method="get" action="/add_school">
+		<br />
+		<br />
+		<div  class="text-center">
+			<input type="text" name='school' required="required"/>
+			<button type="submit" class="btn btn-default">添加学校</button>
+		</div>
+	</form>
+	<form method="get" action="/add_school">	
+		<div  class="text-center">
+			<input type="text" name='school' required="required"/>
+			<button type="submit" class="btn btn-default">查找学校</button>
+		</div>
+	</form>
+	<form method="get" action="/add_school">	
+		<div  class="text-center">
+			学校名<input type="text" name='school' required="required"/>
+			改为<input type="text" name='school' required="required"/>
+			<button type="submit" class="btn btn-default">查找学校</button>
+		</div>
+	</form>
+		<br />
+	
+		
+		{%for s in school%}
+			<div class="form-group">
+				<p class="text-center">
+					<a href="process?sc_id={{s.school_id}}&page=1">大学--------{{s.school_name}}</a>
+				</p>
+			</div>
+		{%endfor%}
+		<p class="text-center">
+		{%for i in a%}
+			<a href="?page={{i}}">[{{i}}]</a>
+		{%endfor%}
+		<a href="/">返回</a>
+		</p>
+	
+
+   
+  
+   
+   
+   
+   
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="static/js/bootstrap.min.js"></script>
+  </body>
+</html>

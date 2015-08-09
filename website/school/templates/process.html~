@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>添加</title>
+
+    <!-- Bootstrap -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+	<form method="get" action="/add_process">
+		<br />
+		<br />
+		<div  class="text-center">
+			<input type="hidden" name="sc_id" value="{{sc_id}}" />
+			<input type="text" name='process' required="required"/>
+			<button type="submit" class="btn btn-default">添加专业</button>
+		</div>
+		
+	</form>
+	<form method="get" action="/add_process">
+		
+		<div  class="text-center">
+			<input type="hidden" name="sc_id" value="{{sc_id}}" />
+			<input type="text" name='process_name' required="required"/>
+			<button type="submit" class="btn btn-default">查找专业</button>
+		</div>
+		
+	</form>
+	<form method="get" action="/add_process">
+		
+		<div  class="text-center">
+			<input type="hidden" name="sc_id" value="{{sc_id}}" />
+			修改专业名<input type="text" name='old_process' required="required"/>
+			为<input type="text" name='new_process' required="required"/>
+			<button type="submit" class="btn btn-default">修改专业</button>
+		</div>
+		
+	</form>
+
+		<br />
+		
+		{%for s in process%}
+			<div class="form-group">
+				<p class="text-center">
+					<a href="student?sc_id={{sc_id}}&pro_id={{s.school_process_id}}&page=1">专业--------{{s.school_process}}</a>
+				</p>
+			</div>
+		{%endfor%}
+		<p class="text-center">
+		{%for i in a%}
+			<a href="process?sc_id={{sc_id}}&page={{i}}">[{{i}}]</a>
+		{%endfor%}
+		<a href="/school?page=1">返回</a>
+		</p>
+	
+   
+   
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="static/js/bootstrap.min.js"></script>
+  </body>
+</html>
