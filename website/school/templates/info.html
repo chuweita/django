@@ -6,6 +6,29 @@
   <body>
 	
 		{{info}}
+		
+		{%if sc%}
+			{%for i in sc%}
+				<a href='process?sc_id={{i.school_id}}&page=1'>{{i.school_id}}--------{{i.school_name}}</a>
+				<br />
+			{%endfor%}
+		{%endif%}
+		
+		{%if pro%}
+			{%for i in pro%}
+				<a href='student?sc_id={{sc_id}}&pro_id={{i.school_process_id}}&page=1'>{{i.school_process_id}}--------{{i.school_process}}</a>
+				<br />
+			{%endfor%}
+		{%endif%}
+		
+		{%if stu%}
+			{%for i in stu%}
+				{{i.student_id}}--------{{i.student_name}}
+				<br />
+			{%endfor%}
+		{%endif%}
+		
+		
 		<a href="/{{url}}">返回</a>
 	</form>
 

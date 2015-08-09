@@ -15,20 +15,23 @@
 		<br />
 		<br />
 		<div  class="text-center">
+			<input type="hidden" name="info" value="insert" />
 			<input type="text" name='school' required="required"/>
 			<button type="submit" class="btn btn-default">添加学校</button>
 		</div>
 	</form>
 	<form method="get" action="/add_school">	
 		<div  class="text-center">
+			<input type="hidden" name="info" value="select" />
 			<input type="text" name='school' required="required"/>
 			<button type="submit" class="btn btn-default">查找学校</button>
 		</div>
 	</form>
 	<form method="get" action="/add_school">	
 		<div  class="text-center">
+			<input type="hidden" name="info" value="update" />
 			学校名<input type="text" name='school' required="required"/>
-			改为<input type="text" name='school' required="required"/>
+			改为<input type="text" name='school_new	' required="required"/>
 			<button type="submit" class="btn btn-default">修改学校</button>
 		</div>
 	</form>
